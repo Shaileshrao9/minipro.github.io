@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zen Zone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            <div>
+                 <img onclick="home()" src="logo1.png" alt="" class="navbar-brand" />
+            </div>
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href="nindex.html" onclick="home()">Home</a></li>
+
+                    <li><a href="about.html" onclick="toggleSection('about-us')">About Us</a></li>
+                    <li><a href="contact.html" onclick="toggleSection('contact-us')">Contact Us</a></li>
+                    <li><a href="signup.html" onclick="toggleSection('contact-us')">Signup</a></li>
+
+                   
+                </ul>
+            </nav>
+        </div>
+       
+        <style>
+            .slider {
+                position: absolute;
+                left: 65%;
+                transform: translateX(-50%);
+                /* Adjust the width if needed */
+                width: 80%;
+                /* Add any other styles you want for the slider container */
+            }
+        </style>
+            
+    
+          <div class="slider">
+            <div class="slides">
+              <!--radio buttons start-->
+              <input type="radio" name="radio-btn" id="radio1">
+              <input type="radio" name="radio-btn" id="radio2">
+              <input type="radio" name="radio-btn" id="radio3">
+              <input type="radio" name="radio-btn" id="radio4">
+              <!--radio buttons end-->
+              <!--slide images start-->
+              <div class="slide first">
+                <img src="t1.png" alt="">
+              </div>
+              <div class="slide">
+                <img src="t2.png" alt="">
+              </div>
+              <div class="slide">
+                <img src="t3.png" alt="">
+              </div>
+              <div class="slide">
+                <img src="t4.png" alt="">
+              </div>
+              <!--slide images end-->
+              <!--automatic navigation start-->
+              <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+              </div>
+              <!--automatic navigation end-->
+            </div>
+            <!--manual navigation start-->
+            <div class="navigation-manual">
+              <label for="radio1" class="manual-btn"></label>
+              <label for="radio2" class="manual-btn"></label>
+              <label for="radio3" class="manual-btn"></label>
+              <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!--manual navigation end-->
+          </div>
+          <!--image slider end-->         
+        <script>
+            var sliderVisible = true;
+        
+            function toggleSlider() {
+                var slider = document.querySelector('.slider');
+                if (sliderVisible) {
+                    slider.style.display = 'none';
+                    sliderVisible = false;
+                } else {
+                    slider.style.display = 'block';
+                    sliderVisible = true;
+                }
+            }
+            </script>      
+          <script type="text/javascript">
+          var counter = 1;
+          setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 4){
+              counter = 1;
+            }
+          }, 5000);
+          </script>
+      
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>        
+</body>
+
+</html>
